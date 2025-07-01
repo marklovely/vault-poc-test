@@ -1,0 +1,11 @@
+{
+  "bound_audiences": ["https://github.com/marklovely"],
+  "bound_subject": "repo:marklovely/vault-poc-test:ref:refs/heads/main",
+  "bound_claims": {
+    "repository": "marklovely/vault-poc-test"
+  },
+  "user_claim": "actor",
+  "role_type": "jwt",
+  "policies": ["github-actions"],
+  "ttl": "15m"
+}
