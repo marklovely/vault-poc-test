@@ -116,9 +116,9 @@ jobs:
             # Verify token is revoked by trying to use it
             echo "Verifying token is revoked..."
             if vault token lookup -self 2>/dev/null; then
-              echo "❌ WARNING: Token still active!"
+              echo "WARNING: Token still active!"
             else
-              echo "✅ Confirmed: Token successfully revoked"
+              echo "Confirmed: Token successfully revoked"
             fi
           else
             echo "No token to revoke"
