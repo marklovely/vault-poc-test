@@ -43,7 +43,7 @@ jobs:
 
       - name: Authenticate with Vault
         env:
-          VAULT_ADDR: "https://YOUR_NGROK_URL.ngrok.io"  # Replace with your actual ngrok URL
+          VAULT_ADDR: "https://aa02-87-75-171-199.ngrok-free.app"  # Replace with your actual ngrok URL
         run: |
           echo "Attempting to authenticate with Vault..."
           echo "Vault Address: $VAULT_ADDR"
