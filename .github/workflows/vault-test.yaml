@@ -70,7 +70,7 @@ jobs:
 
           # List available secrets
           echo "Available secrets:"
-          vault kv list secret/ || echo "Failed to list secrets"
+          vault kv list secret/github/|| echo "Failed to list secrets"
 
           # Read specific secrets
           echo "Database password:"
@@ -95,3 +95,12 @@ jobs:
           # export DATABASE_PASSWORD="$DB_PASSWORD"
           # export API_KEY="$API_KEY"
           # ./your-application
+      - name: Test Python Application
+        env:
+          VAULT_ADDR: "https://aa02-87-75-171-199.ngrok-free.app"
+        run: |
+          # Install Python Vault client
+          pip install hvac
+
+          # Run the Python app
+          python test-app.py
