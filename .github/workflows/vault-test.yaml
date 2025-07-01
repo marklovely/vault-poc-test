@@ -104,3 +104,16 @@ jobs:
 
           # Run the Python app
           python test-app.py
+
+      - name: Revoke Vault Token
+        if: always()  # This runs even if previous steps fail
+        env:
+          VAULT_ADDR: "https://aa02-87-75-171-199.ngrok-free.app"
+        run: |
+          if [ ! -z "$VAULT_TOKEN" ]; then
+            echo "Revoking Vault token..."
+            vault token revoke -self || echo "Token revocation failed (token may already be expired)"
+            echo "Token revoked successfully"
+          else
+            echo "No token to revoke"
+          fi
